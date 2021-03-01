@@ -1,0 +1,5 @@
+angular_velocity_controller start
+mc_rate_control stop
+control_allocator start
+param set MPC_USE_HTE 0
+param set COM_PREARM_MODE 0

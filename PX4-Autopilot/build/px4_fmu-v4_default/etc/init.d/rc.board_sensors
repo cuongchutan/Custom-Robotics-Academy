@@ -1,0 +1,17 @@
+board_adc start
+pwm_out sensor_reset 50
+ms5611 -s start
+if ! hmc5883 -T -s -R 2 start
+then
+lis3mdl -s start
+fi
+if ! icm20602 -s -R 8 start
+then
+icm20608g -s -R 8 start
+fi
+if param compare SYS_AUTOSTART 4250
+then
+mpu6500 -s -R 0 start
+else
+mpu9250 -s -R 8 start
+fi

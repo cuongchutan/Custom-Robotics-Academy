@@ -1,0 +1,20 @@
+if [ $AUTOCNF = yes ]
+then
+param set-default CBRK_IO_SAFETY 22027
+if ! param compare SYS_AUTOSTART 4250
+then
+param set-default MAV_2_CONFIG 301
+param set-default MAV_2_RATE 20000
+param set-default SER_WIFI_BAUD 921600
+fi
+fi
+if param compare SER_WIFI_BAUD 1
+then
+if ! param compare SYS_AUTOSTART 4250
+then
+param set-default MAV_2_CONFIG 301
+param set-default MAV_2_RATE 20000
+param set-default SER_WIFI_BAUD 921600
+fi
+fi
+safety_button start

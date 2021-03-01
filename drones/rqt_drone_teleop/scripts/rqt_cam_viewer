@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+
+import sys
+
+from rqt_cam_viewer.cam_viewer import CamViewer
+from rqt_gui.main import Main
+
+plugin = 'rqt_cam_teleop'
+main = Main(filename=plugin)
+sys.exit(main.main(standalone=plugin))
